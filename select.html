@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全选，反选，全不选</title>
+</head>
+
+
+<h3>请选择你的初恋</h3>
+
+<body>
+    <form action="">
+        <p><input type="checkbox" name="hobby" value="1">CC</p>
+        <p><input type="checkbox" name="hobby" value="2">老八</p>
+        <p><input type="checkbox" name="hobby" value="3">能天使</p>
+        <p><input type="checkbox" name="hobby" value="4">02</p>
+        <form action=>
+            <button>全选</button>
+            <button>反选</button>
+            <button>全不选</button>
+            <script>
+                let bt = document.getElementsByTagName('button');
+                let inputs = document.getElementsByTagName('input');
+
+                bt[0].onclick = function (event) {
+                    event.preventDefault(); // 阻止默认表单提交
+                    for (let i = 0; i < inputs.length; i++) {
+                        inputs[i].checked = true;
+                    }
+                }
+
+                bt[1].onclick = function (event) {
+                    event.preventDefault();
+                    for (let i = 0; i < inputs.length; i++) {
+                        inputs[i].checked = !inputs[i].checked;
+                    }
+                }
+
+                bt[2].onclick = function (event) {
+                    event.preventDefault();
+                    for (let i = 0; i < inputs.length; i++) {
+                        inputs[i].checked = false;
+                    }
+                }
+
+
+            </script>
+        </form>
+</body>
+
+</html>
